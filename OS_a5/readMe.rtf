@@ -1,0 +1,19 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2636
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue0;\red255\green255\blue255;}
+{\*\expandedcolortbl;;\cssrgb\c0\c0\c0;\cssrgb\c100000\c100000\c99985\c0;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 PART 1\
+Since there are 5 philosophers and 5 forks there is a chance that the 5 philosophers may pick up all the forks at once and since one philosopher needs 2 forks to eat all will be unable to eat creating a deadlock situation and hence we need to create a solution so that the philosophers can eat and think in a synchronous manner and never encounter a deadlock. To provide a solution w e have used semaphores \cf2 \cb3 \expnd0\expndtw0\kerning0
+a data structure used to help threads work together without interfering with each other\cb1 \kerning1\expnd0\expndtw0  
+\fs20 \cf0  
+\fs24 we have used the semaphores to represent the various forks and created an array of philosopher id. Each philosopher can have 3 state either he/she would have not eaten, thinking or eaten, so in-order to store the states I have created an array of states. I have created two functions \'93Left\'94 and \'93Right\'94 to find the id of the philosopher to the left and philosopher to the right. I have then created a function \'93find_fork\'94 which serves to check if the philosopher to the left and philosopher to the right is not eating and if not it unlocks the fork beside the philosopher using sem_post() and if he or she cannot eat it puts it to sem_wait(), here sem_post is used to increment the value of semaphore and sem_wait decrements it so if the fork is in use it has value 1 and when it is available its value is 0. similarly the \'93give_fork\'94 function is used so the eating philosopher passes the fork to the left and right ones. there is also a \'93phily\'94 function which is used to run these other functions.\
+the main creates the philosophers and initiates the program.\
+\
+PART 2\
+Since in part 2 the condition states that there is a requirement of only 1 fork and a bowl of sauce to eat, the situation becomes much more simpler as all 5 philosopher will be able to grab the fork the main thing will be the bowls since there are 4 bowls there will be 4 philosophers that can eat at a time, so there will not be any condition where none of the philosopher will remain hungry.\
+\
+PART 3\
+In this part of the question i have created a counting semaphore that represents represents the bowls and i have initialised it with 4 so this represents the 4 bowls which can be used by 4 philosophers at one time and the rest of the thing depends on the forks semaphore like the first part we check for one philosopher and check if the left and right are not eating and if they are not we raise the fork and bowl semaphore and the philosopher eats the food after eating they put the fork down and the bowl down and then we give the fork and bowl to the others same thing continues irradicating the deadlock condition.}

@@ -1,0 +1,9 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2636
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww28600\viewh15240\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 Question 2:\
+In this question we have to first define a function A()  in which we have called the function B() which we have written in assembly code and passing along with it a 64 bit integer which is inputted by the user , in the assembly language file we have first used extern c to return to c when this function ends then we have pushed the argument passed into the stack using push rdi  then we have set the value of general purpose register rax to 1 to set the pointer to block 1 then we have moved 1 to destination index register so that the blocks are read by the increment of 1 we have then moved the message that we have defined in section .data into the source index register and its length to rdx then we have called the syscall to print this message, we have repeated the same steps for printing the ascii value but instead of passing a message to source index i have passed the stack pointer address which contains the integer that we have passed and instead of the length we have moved 8, we have then popped and using the lea command stored the return address to c into a general purposes register rax which we use to move this address to the stack pointer register to return to c when ret command is called.}
